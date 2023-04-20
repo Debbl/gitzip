@@ -11,8 +11,10 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
+    "compressing": "^1.9.0",
     "electron-serve": "^1.1.0",
-    "electron-store": "^8.1.0"
+    "electron-store": "^8.1.0",
+    "minimatch": "^9.0.0"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
