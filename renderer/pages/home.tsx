@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "antd";
+import { Button, message } from "antd";
 import electron from "electron";
 
 function Home() {
@@ -10,17 +10,18 @@ function Home() {
     if (!ipcRenderer) return;
     const dir = await ipcRenderer.invoke("dialog:openDir");
     setSrcPath(dir);
-    console.log(dir);
   };
 
-  const handleCompress = () => {
-    ipcRenderer && ipcRenderer.emit("upload:compress");
+  const handleCompress = async () => {
+    if (!ipcRenderer) return;
+    const filePath = await ipcRenderer.invoke("dialog:compress", srcPath);
+    filePath && message.success(filePath + "压缩成功！");
   };
 
   return (
     <div>
-      <Button onClick={() => handleClick()}>upload</Button>
-      <Button onClick={() => handleCompress()}>compress</Button>
+      <Button onClick={() => handleClick()}>选择文件夹</Button>
+      <Button onClick={() => handleCompress()}>压缩</Button>
       <div>{srcPath}</div>
     </div>
   );

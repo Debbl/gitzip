@@ -15,7 +15,7 @@ function Next() {
   return (
     <React.Fragment>
       <Head>
-        <title>Next - Nextron (with-typescript-ant-design)</title>
+        <title>GitZip</title>
       </Head>
 
       <Header>
