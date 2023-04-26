@@ -15,7 +15,7 @@ function Home() {
   const handleCompress = async () => {
     if (!ipcRenderer) return;
     const filePath = await ipcRenderer.invoke("dialog:compress", srcPath);
-    filePath && message.success(filePath + "压缩成功！");
+    filePath && message.success(`${filePath}压缩成功！`);
   };
 
   return (

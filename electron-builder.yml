@@ -1,6 +1,6 @@
-appId: run.aiwan.gitzip 
-productName: GitZip 
-copyright: Copyright © 2023 Debbl 
+appId: run.aiwan.gitzip
+productName: GitZip
+copyright: Copyright © 2023 Debbl
 directories:
   output: dist
   buildResources: resources

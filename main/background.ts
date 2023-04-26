@@ -1,7 +1,7 @@
+import path from "path";
 import { app, dialog, ipcMain } from "electron";
 import serve from "electron-serve";
 import { createWindow } from "./helpers";
-import path from "path";
 import { compress } from "./compress";
 
 const isProd: boolean = process.env.NODE_ENV === "production";

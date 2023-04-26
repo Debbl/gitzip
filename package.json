@@ -1,14 +1,16 @@
 {
-  "private": true,
   "name": "gitzip",
-  "description": "a compress tool uses .gitignore rules",
   "version": "0.0.1",
+  "private": true,
+  "description": "a compress tool uses .gitignore rules",
   "author": "Debbl <me@aiwan.run>",
   "main": "app/background.js",
   "scripts": {
     "dev": "nextron",
     "build": "nextron build",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "electron-builder install-app-deps",
+    "lint": "eslint . --ignore-path .gitignore",
+    "lint:fix": "eslint . --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "compressing": "^1.9.0",
@@ -18,11 +20,14 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@debbl/eslint-config-prettier": "^0.0.39",
+    "@debbl/eslint-config-react": "^0.0.39",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
     "antd": "^4.22.8",
     "electron": "^21.3.3",
     "electron-builder": "^23.6.0",
+    "eslint": "^8.39.0",
     "next": "^12.3.4",
     "nextron": "^8.5.0",
     "react": "^18.2.0",
