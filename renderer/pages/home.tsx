@@ -19,10 +19,23 @@ function Home() {
   };
 
   return (
-    <div>
-      <Button onClick={() => handleClick()}>选择文件夹</Button>
-      <Button onClick={() => handleCompress()}>压缩</Button>
-      <div>{srcPath}</div>
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <div
+        style={{ marginTop: "10%", display: "flex", flexDirection: "column" }}
+      >
+        <div style={{ display: "flex", columnGap: "10px" }}>
+          <Button onClick={() => handleClick()}>选择文件夹</Button>
+          <Button onClick={() => handleCompress()}>压缩</Button>
+        </div>
+        <div style={{ marginTop: "10px" }}>{srcPath}</div>
+      </div>
     </div>
   );
 }
